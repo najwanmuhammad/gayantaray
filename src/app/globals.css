@@ -5,6 +5,13 @@
   --foreground: #171717;
 }
 
+:root {
+  --primary: #D6F200; /* LIME-ISH */
+  --second: #0B464E; /* TEAL */
+  --dark: #0B141D; /* DARK BLUE GREY*/
+  --light: #F7F8F2; /* WHITE-ISH */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
