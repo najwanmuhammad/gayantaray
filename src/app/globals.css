@@ -1,33 +1,60 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
 :root {
-  --primary: #D6F200; /* LIME-ISH */
-  --second: #0B464E; /* TEAL */
-  --dark: #0B141D; /* DARK BLUE GREY*/
-  --light: #F7F8F2; /* WHITE-ISH */
+  /* limeColorPallete */
+  --lime-100: #FCFFE5
+  --lime-200: #F3FA9E;
+  --lime-300: #EAF63F;
+  --lime-400: #DFF10C;
+  --lime-500: #D6F200; /* Primary */
+  --lime-600: #BCD700;
+  --lime-700: #A2BC00;
+  --lime-800: #889F00;
+  --lime-900: #6E8200;
+  --lime-1000: #546600;
+
+  /* tealColorPallete */
+  --teal-100: #B3CED0;
+  --teal-200: #7FB3B6;
+  --teal-300: #4D999D;
+  --teal-400: #257F85;
+  --teal-500: #0B464E;
+  --teal-600: #093C43;
+  --teal-700: #083238;
+  --teal-800: #06282D;
+  --teal-900: #051E22;
+  --teal-1000: #031417;
+
+  /* blueColorPallete */
+  --blue-100: #C5C8CC;
+  --blue-200: #8D949B;
+  --blue-300: #5A616A;
+  --blue-400: #2E3742;
+  --blue-500: #0B141D;
+  --blue-600: #090F17;
+  --blue-700: #070B11;
+  --blue-800: #05070B;
+  --blue-900: #030305;
+  --blue-1000: #010001;
+
+  /* pearlColorPallete */
+  --pearl-100: #FFFFFF;
+  --pearl-200: #FCFDFB;
+  --pearl-300: #FAFCF7;
+  --pearl-400: #F8FAF4;
+  --pearl-500: #F7F8F2;
+  --pearl-600: #DDDEDA;
+  --pearl-700: #C3C5C2;
+  --pearl-800: #A9ABA9;
+  --pearl-900: #8F918F;
+  --pearl-1000: #757776;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sofia-sans-condensed);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-red-had-text);
 }
