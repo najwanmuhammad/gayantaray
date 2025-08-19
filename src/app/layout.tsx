@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sofia_Sans_Condensed, Red_Hat_Text } from "next/font/google";
 import "./globals.css";
+import ResponsiveNav from "@/components/Navbar/ResponsiveNav";
 
 // fontHeading
 const sofiaSansCondensed = Sofia_Sans_Condensed({
@@ -15,12 +16,13 @@ const redHatText = Red_Hat_Text({
   variable: "--font-red-hat-text",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500"]
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
   title: "GAMANTARAY UGM",
-  description: "Gadjah Mada Marine and Naval Technology Advanced Research Activity",
+  description:
+    "Gadjah Mada Marine and Naval Technology Advanced Research Activity",
 };
 
 export default function RootLayout({
@@ -29,10 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"
-    className={`${sofiaSansCondensed.variable} ${redHatText.variable} antialiased`}
+    <html
+      lang="en"
+      className={`${sofiaSansCondensed.variable} ${redHatText.variable} antialiased`}
     >
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body>
+        <ResponsiveNav />
         {children}
       </body>
     </html>

@@ -1,60 +1,90 @@
 @import "tailwindcss";
 
+/* :root {
+} */
 
-:root {
+@theme {
   /* limeColorPallete */
-  --lime-100: #FCFFE5
-  --lime-200: #F3FA9E;
-  --lime-300: #EAF63F;
-  --lime-400: #DFF10C;
-  --lime-500: #D6F200; /* Primary */
-  --lime-600: #BCD700;
-  --lime-700: #A2BC00;
-  --lime-800: #889F00;
-  --lime-900: #6E8200;
-  --lime-1000: #546600;
+  --color-lime-100: #fcffe5;
+  --color-lime-200: #f3fa9e;
+  --color-lime-300: #eaf63f;
+  --color-lime-400: #dff10c;
+  --color-lime-500: #d6f200; /* Primary */
+  --color-lime-600: #bcd700;
+  --color-lime-700: #a2bc00;
+  --color-lime-800: #889f00;
+  --color-lime-900: #6e8200;
+  --color-lime-1000: #546600;
 
   /* tealColorPallete */
-  --teal-100: #B3CED0;
-  --teal-200: #7FB3B6;
-  --teal-300: #4D999D;
-  --teal-400: #257F85;
-  --teal-500: #0B464E;
-  --teal-600: #093C43;
-  --teal-700: #083238;
-  --teal-800: #06282D;
-  --teal-900: #051E22;
-  --teal-1000: #031417;
+  --color-teal-100: #b3ced0;
+  --color-teal-200: #7fb3b6;
+  --color-teal-300: #4d999d;
+  --color-teal-400: #257f85;
+  --color-teal-500: #0b464e;
+  --color-teal-600: #093c43;
+  --color-teal-700: #083238;
+  --color-teal-800: #06282d;
+  --color-teal-900: #051e22;
+  --color-teal-1000: #031417;
 
   /* blueColorPallete */
-  --blue-100: #C5C8CC;
-  --blue-200: #8D949B;
-  --blue-300: #5A616A;
-  --blue-400: #2E3742;
-  --blue-500: #0B141D;
-  --blue-600: #090F17;
-  --blue-700: #070B11;
-  --blue-800: #05070B;
-  --blue-900: #030305;
-  --blue-1000: #010001;
+  --color-blue-100: #c5c8cc;
+  --color-blue-200: #8d949b;
+  --color-blue-300: #5a616a;
+  --color-blue-400: #2e3742;
+  --color-blue-500: #0b141d;
+  --color-blue-600: #090f17;
+  --color-blue-700: #070b11;
+  --color-blue-800: #05070b;
+  --color-blue-900: #030305;
+  --color-blue-1000: #010001;
 
   /* pearlColorPallete */
-  --pearl-100: #FFFFFF;
-  --pearl-200: #FCFDFB;
-  --pearl-300: #FAFCF7;
-  --pearl-400: #F8FAF4;
-  --pearl-500: #F7F8F2;
-  --pearl-600: #DDDEDA;
-  --pearl-700: #C3C5C2;
-  --pearl-800: #A9ABA9;
-  --pearl-900: #8F918F;
-  --pearl-1000: #757776;
+  --color-pearl-100: #ffffff;
+  --color-pearl-200: #fcfdfb;
+  --color-pearl-300: #fafcf7;
+  --color-pearl-400: #f8faf4;
+  --color-pearl-500: #f7f8f2;
+  --color-pearl-600: #dddeda;
+  --color-pearl-700: #c3c5c2;
+  --color-pearl-800: #a9aba9;
+  --color-pearl-900: #8f918f;
+  --color-pearl-1000: #757776;
+
+  /* font family */
+  --font-sofia: var(--font-sofia-sans-condensed), sans-serif;
+  --font-redhat: var(--font-red-hat-text), sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sofia-sans-condensed);
-}
+@layer utilities {
+  .clip-navbar {
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 17px) 0%,
+      100% 17px,
+      100% 100%,
+      17px 100%,
+      0% calc(100% - 17px)
+    );
+  }
 
-body {
-  font-family: var(--font-red-had-text);
+  .clip-contact-1 {
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 17px) 0%,
+      100% 17px,
+      100% 100%,
+      0% 100%
+    );
+  }
+  .clip-contact-2 {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      calc(20% - 17px) 100%,
+      0% 17px
+    );
+  }
 }
