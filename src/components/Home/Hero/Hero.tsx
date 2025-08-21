@@ -1,178 +1,122 @@
+"use client";
+
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-slate-900 pt-20">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 left-10 h-32 w-32 rotate-45 border-2 border-lime-400"></div>
-        <div className="absolute top-40 right-20 h-24 w-24 rotate-12 border border-lime-400"></div>
-        <div className="absolute bottom-20 left-1/4 h-16 w-16 rotate-45 border border-lime-400"></div>
-        <div className="absolute right-1/3 bottom-40 h-20 w-20 rotate-12 border-2 border-lime-400"></div>
+    <section className="relative min-h-screen overflow-hidden bg-blue-500 pt-20">
+      {/* background pattern dot */}
+      {/* <div className="absolute inset-0 z-10">
+        <Image src="/vectors/dot.svg" alt="dot" fill className="object-cover" />
+      </div> */}
+
+      {/* shape pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1 left-0 hidden md:block">
+          <Image
+            src="vectors/dash-line.svg"
+            alt="vector"
+            width={550}
+            height={550}
+          />
+        </div>
+        <div className="absolute right-60 bottom-28">
+          <Image src="vectors/line.svg" alt="vector" width={600} height={0} />
+        </div>
+        <div className="absolute top-50 right-55">
+          <Image
+            src="/vectors/rectangle.png"
+            alt="vector"
+            width={220}
+            height={220}
+          />
+        </div>
+        <div className="absolute right-160 bottom-25">
+          <Image
+            src="/vectors/circle.png"
+            alt="vector"
+            width={150}
+            height={150}
+          />
+        </div>
+        <div className="absolute -top-1 right-30 h-[100px] w-[200px]">
+          <Image
+            src="/vectors/circle2.svg"
+            alt="vector"
+            fill
+            className="object-contain"
+          />
+        </div>
+        <div className="absolute -top-15 right-0 h-[200px] w-[200px]">
+          <Image
+            src="/vectors/circle3.svg"
+            alt="vector"
+            fill
+            className="object-contain"
+          />
+        </div>
+        <div className="absolute right-0 bottom-22 h-[406px] w-[140px]">
+          <Image
+            src="/vectors/arrow.svg"
+            alt="vector"
+            fill
+            className="object-contain"
+          />
+        </div>
       </div>
 
       {/* Ship Illustrations */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Main Large Ship */}
-        <div className="absolute top-1/3 right-1/4 rotate-12 transform">
-          <svg
-            width="400"
-            height="200"
-            viewBox="0 0 400 200"
-            className="fill-lime-400 opacity-80"
-          >
-            {/* Ship Hull */}
-            <path d="M50 120 L350 120 L330 160 L70 160 Z" />
-            {/* Ship Deck */}
-            <rect x="60" y="100" width="280" height="20" />
-            {/* Containers */}
-            <rect x="80" y="70" width="40" height="30" />
-            <rect x="130" y="70" width="40" height="30" />
-            <rect x="180" y="70" width="40" height="30" />
-            <rect x="230" y="70" width="40" height="30" />
-            <rect x="280" y="70" width="40" height="30" />
-            {/* Bridge */}
-            <rect x="300" y="50" width="40" height="50" />
-            {/* Cranes */}
-            <line
-              x1="100"
-              y1="100"
-              x2="100"
-              y2="30"
-              stroke="currentColor"
-              strokeWidth="3"
-            />
-            <line
-              x1="100"
-              y1="30"
-              x2="140"
-              y2="50"
-              stroke="currentColor"
-              strokeWidth="2"
-            />
-            <line
-              x1="200"
-              y1="100"
-              x2="200"
-              y2="30"
-              stroke="currentColor"
-              strokeWidth="3"
-            />
-            <line
-              x1="200"
-              y1="30"
-              x2="240"
-              y2="50"
-              stroke="currentColor"
-              strokeWidth="2"
-            />
-          </svg>
-        </div>
-
-        {/* Secondary Smaller Ship */}
-        <div className="absolute bottom-20 left-10 -rotate-6 transform">
-          <svg
-            width="200"
-            height="100"
-            viewBox="0 0 200 100"
-            className="fill-lime-400 opacity-60"
-          >
-            <path d="M20 60 L180 60 L170 80 L30 80 Z" />
-            <rect x="30" y="50" width="140" height="10" />
-            <rect x="40" y="35" width="20" height="15" />
-            <rect x="70" y="35" width="20" height="15" />
-            <rect x="100" y="35" width="20" height="15" />
-            <rect x="130" y="30" width="25" height="20" />
-          </svg>
-        </div>
-
-        {/* Top Right Ship */}
-        <div className="absolute top-10 right-10 rotate-45 transform opacity-40">
-          <svg
-            width="150"
-            height="80"
-            viewBox="0 0 150 80"
-            className="fill-lime-400"
-          >
-            <path d="M15 40 L135 40 L130 55 L20 55 Z" />
-            <rect x="20" y="35" width="110" height="5" />
-            <rect x="25" y="25" width="15" height="10" />
-            <rect x="45" y="25" width="15" height="10" />
-            <rect x="65" y="25" width="15" height="10" />
-          </svg>
-        </div>
-
-        {/* Bottom Right Ship Fragment */}
-        <div className="absolute right-0 bottom-32 -rotate-12 transform opacity-30">
-          <svg
-            width="120"
-            height="60"
-            viewBox="0 0 120 60"
-            className="fill-lime-400"
-          >
-            <path d="M10 30 L110 30 L105 45 L15 45 Z" />
-            <rect x="15" y="25" width="90" height="5" />
-            <circle cx="30" cy="20" r="3" />
-            <circle cx="50" cy="20" r="3" />
-            <circle cx="70" cy="20" r="3" />
-          </svg>
-        </div>
-      </div>
-
-      {/* Dashed Lines - Navigation Routes */}
-      <div className="absolute inset-0 overflow-hidden opacity-30">
-        <svg width="100%" height="100%" className="fill-none stroke-lime-400">
-          <path
-            d="M100 200 Q300 100 500 300"
-            strokeDasharray="10,10"
-            strokeWidth="2"
+      <div className="absolute inset-0">
+        {/* Gamanave */}
+        <div className="absolute top-0 left-0 hidden md:block">
+          <Image
+            src="images/ships/vector-gamanave.svg"
+            alt="vector-gamanave"
+            width={650}
+            height={0}
           />
-          <path
-            d="M200 400 Q400 200 700 500"
-            strokeDasharray="8,8"
-            strokeWidth="1.5"
+        </div>
+        {/* Safinah One */}
+        <div className="flex items-center justify-center md:hidden lg:flex">
+          <Image
+            src="images/ships/vector-safinah-one.svg"
+            alt="vector-safinah-one"
+            width={1100}
+            height={0}
           />
-          <path
-            d="M0 300 Q200 150 400 250"
-            strokeDasharray="12,8"
-            strokeWidth="1.5"
+        </div>
+        {/* Jayamahe */}
+        <div className="absolute right-0 bottom-0">
+          <Image
+            src="images/ships/vector-jayamahe.svg"
+            alt="vector-jayamahe"
+            width={650}
+            height={0}
           />
-        </svg>
+        </div>
       </div>
 
       {/* main content */}
-      <div className="relative z-10 container mx-auto flex h-screen items-center justify-between px-4">
+      <div className="relative z-10 mx-auto flex h-screen items-center justify-between px-4">
         {/* Left Content */}
-        <div className="max-w-2xl">
-          <h1 className="mb-8 text-6xl leading-none font-bold text-white md:text-8xl">
+        <div className="mx-16 mt-25 max-w-2xl">
+          <h1 className="mb-8 font-sofia text-6xl leading-[1.1] font-extrabold text-lime-100 md:text-8xl">
             WELCOME TO
-            <br />
-            <span className="text-lime-400">GAMANTARAY</span>
+            <span className="text-lime-400 block">GAMANTARAY</span>
           </h1>
         </div>
         {/* Right Content */}
-        <div className="max-w-xl">
-          <button className="flex items-center gap-2 rounded-sm bg-lime-400 px-8 py-4 text-lg font-bold text-slate-900 transition-colors duration-300 hover:bg-lime-300">
-            LIHAT KAPAL
-            <ArrowUpRightIcon size={32} weight="bold" />
-          </button>
+        <div className="mx-16 mt-50 flex max-w-xl flex-row">
+          <div className="flex items-end px-1 pb-2.5 transition-colors duration-300">
+            <h1 className="font-sofia text-3xl leading-[1.1] font-semibold text-white md:text-4xl">
+              LIHAT KAPAL
+            </h1>
+          </div>
+          <ArrowUpRightIcon size={72} weight="bold" className="text-lime-100" />
         </div>
       </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-1/2 right-20 animate-pulse">
-        <div className="h-4 w-4 rounded-full bg-lime-400"></div>
-      </div>
-      <div className="absolute top-1/3 left-1/4 animate-pulse delay-1000">
-        <div className="h-3 w-3 rounded-full bg-lime-400"></div>
-      </div>
-      <div className="absolute right-1/3 bottom-1/3 animate-pulse delay-500">
-        <div className="h-2 w-2 rounded-full bg-lime-400"></div>
-      </div>
-
-      {/* Gradient Overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-900/50 via-transparent to-slate-900/70"></div>
     </section>
   );
 };

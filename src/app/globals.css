@@ -52,6 +52,13 @@
   --color-pearl-900: #8f918f;
   --color-pearl-1000: #757776;
 
+  /* gradientColor */
+  --background-image-gradient-01: linear-gradient(
+    to bottom,
+    var(--color-teal-700),
+    var(--color-blue-500)
+  );
+
   /* font family */
   --font-sofia: var(--font-sofia-sans-condensed), sans-serif;
   --font-redhat: var(--font-red-hat-text), sans-serif;

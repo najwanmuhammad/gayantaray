@@ -35,8 +35,8 @@ const Nav = ({ openNav }: Props) => {
           <Image
             src="/white-logo-3.svg"
             alt="Gamantaray Logo"
-            width={100}
-            height={32}
+            width={134}
+            height={42}
           />
         </div>
         {/* NavLinks */}
