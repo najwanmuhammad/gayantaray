@@ -94,4 +94,12 @@
       0% 17px
     );
   }
+
+  .social-media-mobile {
+    @apply flex h-8 w-8 items-center justify-center rounded-lg bg-pearl-500 transition-colors duration-200 hover:bg-pearl-600;
+  }
+
+  .social-media-desktop {
+    @apply flex h-12 w-12 items-center justify-center rounded-xl bg-pearl-500 transition-colors duration-200 hover:bg-pearl-600;
+  }
 }

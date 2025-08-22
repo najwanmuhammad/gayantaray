@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sofia_Sans_Condensed, Red_Hat_Text } from "next/font/google";
 import "./globals.css";
 import ResponsiveNav from "@/components/Navbar/ResponsiveNav";
+import Footer from "@/components/Footer";
 
 // fontHeading
 const sofiaSansCondensed = Sofia_Sans_Condensed({
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body>
         <ResponsiveNav />
         {children}
+        <Footer />
       </body>
     </html>
   );
