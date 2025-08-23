@@ -102,4 +102,84 @@
   .social-media-desktop {
     @apply flex h-12 w-12 items-center justify-center rounded-xl bg-pearl-500 transition-colors duration-200 hover:bg-pearl-600;
   }
+
+  .text-stroke-black {
+    color: transparent; /* supaya fill hilang */
+    -webkit-text-stroke: 2px #03141740; /* outline warna hitam */
+  }
+
+  /* text styles heading*/
+  /* mobile-desktop*/
+  .h1 {
+    @apply font-sofia text-[60px] leading-[110%] font-extrabold;
+  }
+  @media (width >= 48rem) {
+    .h1 {
+      @apply text-[90px];
+    }
+  }
+
+  .h2 {
+    @apply font-sofia text-[40px] leading-[110%] font-bold;
+  }
+  @media (width >= 48rem) {
+    .h2 {
+      @apply text-[64px];
+    }
+  }
+
+  .h3 {
+    @apply font-sofia text-[30px] leading-[110%] font-semibold;
+  }
+  @media (width >= 48rem) {
+    .h3 {
+      @apply text-[40px];
+    }
+  }
+
+  .h4 {
+    @apply font-sofia text-[20px] leading-[110%] font-normal;
+  }
+  @media (width >= 48rem) {
+    .h4 {
+      @apply text-[30px];
+    }
+  }
+
+  /* text styles body*/
+  /* body-desktop */
+  .body-large {
+    @apply font-redhat text-[16px] leading-[150%] font-normal;
+  }
+  @media (width >= 48rem) {
+    .body-large {
+      @apply text-[20px];
+    }
+  }
+
+  .body-medium {
+    @apply font-redhat text-[14px] leading-[150%] font-normal;
+  }
+  @media (width >= 48rem) {
+    .body-medium {
+      @apply text-[16px];
+    }
+  }
+
+  .body-medium-bold {
+    @apply font-redhat text-[14px] leading-[150%] font-medium;
+  }
+  @media (width >= 48rem) {
+    .body-medium-bold {
+      @apply text-[16px];
+    }
+  }
+
+  .body-small {
+    @apply font-redhat text-[12px] leading-[150%] font-normal;
+  }
+
+  .body-small-bold {
+    @apply font-redhat text-[12px] leading-[150%] font-medium;
+  }
 }
