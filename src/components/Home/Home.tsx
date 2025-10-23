@@ -1,13 +1,15 @@
 import React from "react";
 import Hero from "./Hero/Hero";
 import About from "./About/About";
+import LatestArticle from "./LatestArticle/LatestArticle";
 
 const Home = () => {
   return (
-    <div className="overflow-hidden">
+    <main className="overflow-hidden">
       <Hero />
       <About />
-    </div>
+      <LatestArticle />
+    </main>
   );
 };
 

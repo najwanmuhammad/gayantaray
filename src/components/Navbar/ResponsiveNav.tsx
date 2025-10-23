@@ -11,10 +11,10 @@ const ResponsiveNav = () => {
   const closeNavHandler = () => setShowNav(false);
 
   return (
-    <div>
+    <nav>
       <Nav openNav={openNavHandler} />
       <MobileNav showNav={showNav} closeNav={closeNavHandler} />
-    </div>
+    </nav>
   );
 };
 
