@@ -38,7 +38,7 @@ const ButtonTwin: React.FC<ButtonTwinProps> = ({
       <button
         onClick={onPrevClick}
         disabled={disabled.prev}
-        className={` ${sizeClasses[size]} relative flex cursor-pointer items-center justify-center overflow-hidden border-none bg-teal-300 font-bold text-pearl-100 transition-colors duration-200 hover:bg-teal-500 active:bg-teal-600 disabled:cursor-not-allowed disabled:opacity-50`}
+        className={` ${sizeClasses[size]} relative flex cursor-pointer items-center justify-center overflow-hidden border-none bg-teal-300 font-bold text-lime-100 transition-colors duration-200 hover:bg-teal-500 active:bg-teal-600 disabled:cursor-not-allowed disabled:opacity-50`}
         style={{
           clipPath: "polygon(0% 25%, 30% 0%, 100% 0%, 100% 100%, 0% 100%)",
         }}

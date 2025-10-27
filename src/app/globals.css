@@ -142,7 +142,7 @@
   }
   @media (width >= 48rem) {
     .h4 {
-      @apply text-[30px];
+      @apply text-[30px] font-medium;
     }
   }
 
