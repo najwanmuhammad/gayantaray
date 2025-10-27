@@ -32,7 +32,7 @@ const teamSections = [
         id: 1,
         name: "Nama Lengkap",
         role: "Jabatan",
-        image: "/images/members/teknis/mekanis/agung.jpg",
+        image: "/images/members/teknis/mekanis/haikal.jpg",
       },
       {
         id: 2,
@@ -62,7 +62,7 @@ const teamSections = [
         id: 6,
         name: "Nama Lengkap",
         role: "Jabatan",
-        image: "/images/members/teknis/mekanis/haikal.jpg",
+        image: "/images/members/teknis/mekanis/agung.jpg",
       },
       {
         id: 7,

@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import PhotoCard from "./PhotoCard";
-import { CaretLeft, CaretRight } from "@phosphor-icons/react";
+import ButtonTwin from "../ui/ButtonTwin";
+import { useWheelCarousel } from "@/hooks/useWheelCarousel";
 
 interface TeamMember {
   id: number;
@@ -21,116 +21,53 @@ interface TeamSectionProps {
 }
 
 export function TeamStructure({ section, index }: TeamSectionProps) {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScroll = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } =
-        scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
-
-  useEffect(() => {
-    checkScroll();
-    const container = scrollContainerRef.current;
-    container?.addEventListener("scroll", checkScroll);
-    window.addEventListener("resize", checkScroll);
-
-    return () => {
-      container?.removeEventListener("scroll", checkScroll);
-      window.removeEventListener("resize", checkScroll);
-    };
-  }, []);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 300;
-      scrollContainerRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
   const isEvenIndex = index % 2 === 0;
   const bgColor = isEvenIndex ? "bg-teal-400" : "bg-blue-500";
   const textColor = isEvenIndex ? "text-teal-900" : "text-lime-100";
 
+  const { active, prev, next, disabled, onWheel, getCardStyle, onCardClick } =
+    useWheelCarousel(section?.members?.length ?? 0, { durationMs: 500 });
+
   return (
-    <section className={`w-full min-h-screen px-4 py-12 md:px-8 md:py-16 ${bgColor}`}>
+    <section
+      className={`min-h-full w-full px-4 py-10 md:px-8 md:py-16 ${bgColor}`}
+      onWheel={onWheel}
+    >
       <div className="mx-auto md:mx-8">
         {/* Header with title and navigation */}
-        <div className="mb-8 flex flex-col gap-6 md:mb-12 md:flex-row md:items-start md:justify-between md:gap-8">
+        <div className="mb-2 flex items-center justify-between">
           {/* Title Section */}
-          <div className="flex-1">
-            <h2
-              className={`mb-3 font-sofia text-[30px] leading-[110%] font-semibold md:text-[64px] md:font-bold ${textColor}`}
+          <div className="min-w-0">
+            <h3
+              className={`font-sofia text-[30px] leading-[110%] font-semibold md:text-[64px] md:font-bold ${textColor}`}
             >
               {section.title}
-            </h2>
+            </h3>
           </div>
-
-          {/* Navigation Buttons - positioned on right */}
-          <div className="flex flex-shrink-0 gap-2 md:gap-3">
-            <button
-              onClick={() => scroll("left")}
-              className={`rounded-lg p-2 transition-colors md:p-3 ${
-                canScrollLeft
-                  ? "bg-teal-600 text-white hover:bg-teal-700"
-                  : "cursor-not-allowed bg-gray-600 text-gray-400"
-              }`}
-              disabled={!canScrollLeft}
-              aria-label="Scroll left"
-            >
-              <CaretLeft className="h-5 w-5 md:h-6 md:w-6" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className={`rounded-lg p-2 transition-colors md:p-3 ${
-                canScrollRight
-                  ? "bg-yellow-400 text-slate-900 hover:bg-yellow-500"
-                  : "cursor-not-allowed bg-gray-600 text-gray-400"
-              }`}
-              disabled={!canScrollRight}
-              aria-label="Scroll right"
-            >
-              <CaretRight className="h-5 w-5 md:h-6 md:w-6" />
-            </button>
+          {/* Navigation Buttons*/}
+          <div className="ml-4 shrink-0">
+            <ButtonTwin
+              onPrevClick={prev}
+              onNextClick={next}
+              disabled={disabled}
+            />
           </div>
         </div>
 
-        <div
-          className="perspective"
-          style={{
-            perspective: "1200px",
-          }}
-        >
-          {/* Scrollable Container with wheel effect */}
-          <div
-            ref={scrollContainerRef}
-            className="flex gap-4 overflow-x-auto scroll-smooth pb-4 md:gap-6"
-            style={{
-              scrollBehavior: "smooth",
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
-          >
-            {section.members.map((member) => (
-              <PhotoCard key={member.id} member={member} />
-            ))}
-          </div>
+        <div className="relative mx-auto flex h-[500px] items-center justify-center md:mb-16 md:h-[130vh] lg:h-[110vh]">
+          {(section.members ?? []).map((m, i) => (
+            <div
+              key={m.id}
+              className="absolute"
+              style={getCardStyle(i)}
+              onClick={() => onCardClick(i)}
+              aria-hidden={!(i === active)}
+            >
+              <PhotoCard member={m} />
+            </div>
+          ))}
         </div>
       </div>
-
-      <style jsx>{`
-        div::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </section>
   );
 }
