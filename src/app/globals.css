@@ -151,6 +151,15 @@
       @apply text-[30px] font-medium;
     }
   }
+  /* text button */
+  .button-text {
+    @apply font-sofia text-[24px] leading-[110%] font-semibold;
+  }
+  @media (width >= 48rem) {
+    .button-text {
+      @apply text-[30px];
+    }
+  }
 
   /* text styles body*/
   /* body-desktop */

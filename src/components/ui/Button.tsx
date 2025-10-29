@@ -5,7 +5,7 @@ import React from "react";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: "primary" | "secondary";
-  size?: "sm" | "md" | "lg";
+  size?: "mobile" | "dekstop";
   shape?: "angled-right" | "cut-bottom-left" | "cut-top-right";
   fullWidth?: boolean;
   loading?: boolean;
@@ -14,7 +14,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: React.FC<ButtonProps> = ({
   children,
   variant = "primary",
-  size = "md",
+  size = "mobile",
   shape = "angled-right",
   fullWidth = false,
   loading = false,
@@ -28,14 +28,13 @@ const Button: React.FC<ButtonProps> = ({
 
   // Size variants
   const sizeStyles = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-8 py-2", // 0.5rem 1.5rem equivalent
-    lg: "px-8 py-3 text-lg",
+    mobile: "px-6 py-2",
+    dekstop: "px-8 py-2",
   };
 
   // Color variants
   const variantStyles = {
-    primary: "bg-lime-300 text-blue-500 hover:bg-lime-500 active:bg-lime-700",
+    primary: "bg-lime-300 text-blue-500 hover:bg-lime-600 active:bg-lime-700",
     secondary:
       "bg-gray-600 text-white hover:bg-gray-700 active:bg-gray-800 focus:ring-gray-500",
   };

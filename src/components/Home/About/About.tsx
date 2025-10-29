@@ -37,7 +37,7 @@ const About = () => {
               <div className="pt-2">
                 <Button
                   shape="angled-right"
-                  size="md"
+                  size="dekstop"
                   className="font-sofia text-2xl font-semibold text-blue-500 md:text-3xl"
                 >
                   PELAJARI LEBIH LANJUT

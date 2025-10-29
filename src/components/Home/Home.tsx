@@ -4,7 +4,7 @@ import About from "./About/About";
 import LatestArticle from "./LatestArticle/LatestArticle";
 import Gallery from "./Gallery/Gallery";
 import Sponsor from "./Sponsor/Sponsor";
-import Achiev from "./Achiev/Achiev";
+// import Achiev from "./Achiev/Achiev";
 import AchievStats from "./Achiev/AchievStats";
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
       <About />
       <LatestArticle />
       <Gallery />
-      <Achiev />
+      {/* <Achiev /> */}
       <AchievStats />
       <Sponsor />
     </main>
