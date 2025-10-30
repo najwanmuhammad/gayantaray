@@ -34,11 +34,22 @@ const About = () => {
                 teknologi kelautan.
               </p>
 
-              <div className="pt-2">
+              {/* dekstop */}
+              <div className="hidden pt-2 md:block">
                 <Button
                   shape="angled-right"
                   size="dekstop"
-                  className="font-sofia text-2xl font-semibold text-blue-500 md:text-3xl"
+                  className="button-text text-blue-500"
+                >
+                  PELAJARI LEBIH LANJUT
+                </Button>
+              </div>
+              {/* mobile */}
+              <div className="pt-2 md:hidden">
+                <Button
+                  shape="angled-right"
+                  size="mobile"
+                  className="button-text text-blue-500"
                 >
                   PELAJARI LEBIH LANJUT
                 </Button>

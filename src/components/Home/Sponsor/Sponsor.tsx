@@ -28,7 +28,7 @@ export default function Sponsors({ items, onMoreClick }: SponsorProps) {
         <div className="mb-6 flex items-center justify-between md:mb-10">
           <h2 className="h2 relative z-10 text-lime-100">SPONSOR</h2>
 
-          {/* CTA Selengkapnya */}
+          {/* Dekstop CTA */}
           <div className="hidden md:block">
             <Button
               className="button-text"
