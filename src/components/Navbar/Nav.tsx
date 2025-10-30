@@ -30,7 +30,7 @@ const Nav = ({ openNav }: Props) => {
       } fixed z-[1000] h-[12vh] w-full duration-200`}
     >
       <div className="mx-auto flex h-full w-[92%] items-center justify-between bg-transparent">
-        <div className="mx-2 flex items-center lg:mx-0">
+        <div className="mx-4 flex items-center xl:ml-8">
           {/* Logo */}
           <Image
             src="/white-logo-3.svg"
@@ -54,7 +54,7 @@ const Nav = ({ openNav }: Props) => {
           })}
         </div>
         {/* Button */}
-        <div className="flex items-center">
+        <div className="flex items-center xl:pr-8">
           {/* kontak button */}
           <button className="clip-contact-1 hidden cursor-pointer bg-lime-500 px-6 py-2 font-sofia text-2xl leading-[1.1] font-semibold text-blue-500 transition-all duration-300 hover:bg-lime-700 lg:block">
             Kontak Kami

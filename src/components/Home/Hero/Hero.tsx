@@ -101,7 +101,7 @@ const Hero = () => {
       {/* main content */}
       <div className="relative z-10 mx-auto flex h-screen items-center justify-between px-4">
         {/* Left Content */}
-        <div className="mx-16 mt-25 max-w-2xl">
+        <div className="mx-20 mt-25 max-w-2xl">
           <h1 className="mb-8 font-sofia text-6xl leading-[1.1] font-extrabold text-lime-100 md:text-8xl">
             WELCOME TO
             <span className="text-lime-400 block">GAMANTARAY</span>

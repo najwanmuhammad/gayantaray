@@ -23,7 +23,7 @@ export default function Sponsors({ items, onMoreClick }: SponsorProps) {
           <span className="font-extrabold">SPONSOR</span>
         </h2>
       </div>
-      <div className="px-4 py-10 md:px-8 md:py-16">
+      <div className="px-4 py-10 md:px-8 md:py-16 xl:px-24">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between md:mb-10">
           <h2 className="h2 relative z-10 text-lime-100">SPONSOR</h2>

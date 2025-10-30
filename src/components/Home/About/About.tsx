@@ -13,8 +13,8 @@ const About = () => {
           <span className="block font-bold">GAMANTARAY</span>
         </h2>
       </div>
-      <div className="py-12 md:py-20 lg:py-24">
-        <div className="container mx-auto px-4 md:px-6 lg:px-12">
+      <div className="py-10 md:py-16">
+        <div className="container mx-auto px-4 md:px-6 lg:px-12 xl:px-24">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[auto_1fr] lg:gap-16">
             {/* Title Section */}
             <div className="relative w-fit font-sofia">

@@ -5,52 +5,49 @@ import { ArrowUpRight } from "@phosphor-icons/react";
 
 interface ButtonArticleProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  variant?: "default" | "dark" | "light";
-  size?: "sm" | "md" | "lg";
+  title: string;
+  excerpt?: string;
+  variant?: "default";
   fullWidth?: boolean;
-  iconPosition?: "right" | "left";
   iconSize?: number;
+  isActive?: boolean;
 }
 
 const ButtonArticle: React.FC<ButtonArticleProps> = ({
-  children,
+  title,
+  excerpt,
   variant = "default",
-  size = "md",
   fullWidth = false,
-  iconPosition = "right",
-  iconSize = 36,
+  iconSize = 32,
+  isActive = false,
   className = "",
   ...props
 }) => {
   // Base styles
   const baseStyles =
-    "inline-flex items-center justify-between font-medium transition-all duration-300 border-none cursor-pointer group hover:opacity-80";
+    "relative inline-flex flex-col items-start justify-start gap-2 font-barlow transition-all duration-300 border-none cursor-pointer group overflow-hidden";
 
-  // Size variants
-  const sizeStyles = {
-    sm: "px-4 py-3 text-sm",
-    md: "px-6 py-4 text-base",
-    lg: "px-8 py-6 text-lg",
-  };
+  // Padding untuk memberi ruang pada icon
+  const paddingStyles = "px-6 py-5 pr-14";
 
-  // Color variants
+  // Color variants dengan opacity
   const variantStyles = {
-    default: "bg-slate-300 text-slate-800 hover:bg-slate-200",
-    dark: "bg-slate-800 text-white hover:bg-slate-700",
-    light: "bg-white text-slate-800 hover:bg-slate-50 shadow-sm",
+    default: isActive
+      ? "bg-[#B3CED0]" // Active/selected state
+      : "bg-[#B3CED0]/50 hover:bg-[#B3CED0] active:bg-[#B3CED0]", // Default state
   };
 
-  // Icon styles
-  const iconStyles =
-    "text-lime-400 transition-transform duration-300 group-hover:scale-110 group-hover:translate-x-1 group-hover:-translate-y-1";
+  // Text color conditional berdasarkan isActive
+  const titleColorClass = isActive ? "text-blue-500" : "text-lime-100";
+
+  const excerptColorClass = isActive ? "text-blue-500/80" : "text-lime-100/80";
 
   // Width styles
   const widthStyles = fullWidth ? "w-full" : "";
 
   const combinedClassName = [
     baseStyles,
-    sizeStyles[size],
+    paddingStyles,
     variantStyles[variant],
     widthStyles,
     className,
@@ -68,15 +65,32 @@ const ButtonArticle: React.FC<ButtonArticleProps> = ({
         ...props.style,
       }}
     >
-      {iconPosition === "left" && (
-        <ArrowUpRight size={iconSize} weight="bold" className={iconStyles} />
-      )}
+      {/* Content container */}
+      <div className="relative z-10 flex flex-col items-start gap-1 text-left">
+        {/* Title */}
+        <h3
+          className={`text-base leading-tight font-semibold transition-colors duration-300 md:text-lg ${titleColorClass}`}
+        >
+          {title}
+        </h3>
 
-      <span className="flex-1 text-left">{children}</span>
+        {/* Excerpt (optional) */}
+        {excerpt && (
+          <p
+            className={`text-sm leading-relaxed font-normal transition-colors duration-300 md:text-base ${excerptColorClass}`}
+          >
+            {excerpt}
+          </p>
+        )}
+      </div>
 
-      {iconPosition === "right" && (
-        <ArrowUpRight size={iconSize} weight="bold" className={iconStyles} />
-      )}
+      {/* Arrow icon - absolute positioned di top-right */}
+      <div className="absolute top-2 right-2 z-20 flex h-12 w-12 items-center justify-center">
+        <ArrowUpRight
+          size={iconSize}
+          className="text-lime-400 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110"
+        />
+      </div>
     </button>
   );
 };
