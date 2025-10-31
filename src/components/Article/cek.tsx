@@ -1,5 +1,7 @@
 export default function tes() {
     <div>
-        <a></a>
+        <a>
+            <h1></h1>
+        </a>
     </div>
 }
