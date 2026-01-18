@@ -7,7 +7,7 @@ const teamSections = [
         id: 1,
         name: "Muhammad Rafi Putra Radian",
         role: "Captain Team",
-        image: "/images/members/captain.jpg",
+        image: "/images/members/captain.JPG",
       },
       {
         id: 2,
